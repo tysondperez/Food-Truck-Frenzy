@@ -10,7 +10,7 @@ public class TruckMovement : MonoBehaviour
     private new Rigidbody rigidbody;
     
     private float turnSpeed = 3f;
-    public float maxSpeed = 20f;
+    public float maxSpeed = 40f;
     public float acceleration = 20f;
     public float deceleration = 15f;
     public float currentSpeed = 0f;
