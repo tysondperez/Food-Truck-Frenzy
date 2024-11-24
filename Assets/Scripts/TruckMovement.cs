@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
 public class TruckMovement : MonoBehaviour
 {
-    //private Animator anim;
+    private Animator anim;
     private new Rigidbody rigidbody;
     
     private float turnSpeed = 3f;
@@ -18,15 +18,15 @@ public class TruckMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*anim.SetFloat("Speed", Input.GetAxis("Vertical"));
-        anim.SetFloat("Direction", Input.GetAxis("Horizontal"));*/
+        anim.SetFloat("Speed", Input.GetAxis("Vertical"));
+        //anim.SetFloat("Direction", Input.GetAxis("Horizontal"));
     }
 
     void FixedUpdate()
