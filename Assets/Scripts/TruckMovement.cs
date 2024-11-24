@@ -15,6 +15,14 @@ public class TruckMovement : MonoBehaviour
     public float deceleration = 15f;
     public float currentSpeed = 0f;
     
+    [SerializeField] private float turnLerpSpeed = 5f; // Adjust for smoothness
+    private float currentDirection = 0f;
+    
+    /*[SerializeField] private Transform frontRaycastOrigin;
+    [SerializeField] private Transform backRaycastOrigin;
+    [SerializeField] private float raycastDistance = 2f;
+    [SerializeField] private float tiltSmoothness = 5f;*/
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +34,9 @@ public class TruckMovement : MonoBehaviour
     void Update()
     {
         anim.SetFloat("Speed", Input.GetAxis("Vertical"));
-        //anim.SetFloat("Direction", Input.GetAxis("Horizontal"));
+        float targetTurnInput = Input.GetAxis("Horizontal");
+        currentDirection = Mathf.Lerp(currentDirection, targetTurnInput, Time.deltaTime * turnLerpSpeed);
+        anim.SetFloat("Direction", currentDirection);
     }
 
     void FixedUpdate()
@@ -72,5 +82,31 @@ public class TruckMovement : MonoBehaviour
         {
             rigidbody.MoveRotation(rigidbody.rotation * deltaRotation);
         }
+
+        //DoTiltRaycasts();
     }
+
+    /*private void DoTiltRaycasts()
+    {
+        // Perform raycasts
+        RaycastHit frontHit, backHit;
+        bool frontHitSuccess = Physics.Raycast(frontRaycastOrigin.position, Vector3.down, out frontHit, raycastDistance);
+        bool backHitSuccess = Physics.Raycast(backRaycastOrigin.position, Vector3.down, out backHit, raycastDistance);
+
+        // If both raycasts hit, calculate tilt
+        if (frontHitSuccess && backHitSuccess)
+        {
+            Vector3 frontPoint = frontHit.point;
+            Vector3 backPoint = backHit.point;
+
+            // Calculate tilt direction
+            Vector3 tiltDirection = (frontPoint - backPoint).normalized;
+
+            // Calculate target rotation based on tilt
+            Quaternion targetRotation = Quaternion.LookRotation(tiltDirection, Vector3.up);
+
+            // Smoothly interpolate to the target rotation
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * tiltSmoothness);
+        }
+    }*/
 }

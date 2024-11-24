@@ -12220,7 +12220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1702345159
 Transform:
   m_ObjectHideFlags: 0
@@ -16341,6 +16341,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1170278576175398963, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: backRaycastOrigin
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170278576175398963, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: frontRaycastOrigin
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1542284661229442881, guid: 237fce067394d1b409a7b517d493a764, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -16389,6 +16397,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8560941533547610028, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 3c9c51e449abcaf46912c1fe4123e665, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
