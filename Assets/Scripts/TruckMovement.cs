@@ -72,7 +72,7 @@ public class TruckMovement : MonoBehaviour
         {
             currentSpeed = 0f;
         }
-        print(moveInput + " , "+ currentSpeed);
+        //print(moveInput + " , "+ currentSpeed);
         Vector3 movement = transform.forward * currentSpeed;
         rigidbody.velocity = new Vector3(movement.x, rigidbody.velocity.y, movement.z);
 
