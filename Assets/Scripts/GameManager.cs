@@ -20,17 +20,55 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        InitializeGame();
+        // Directly start loading the first scene
+        StartCoroutine(LoadSceneAsync("MainMenu"));
     }
 
-    private void InitializeGame()
+    private IEnumerator LoadSceneAsync(string sceneName)
     {
-        Debug.Log("Game Initialized");
-        LoadNextScene();
+        // Load the scene asynchronously
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        // Wait until the scene is fully loaded
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // Set it as the active scene
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+
+        print("Active scene in Async: " + SceneManager.GetActiveScene().name);
     }
 
-    private void LoadNextScene()
+    public void SwitchScene(string currentScene, string newScene)
     {
-        SceneManager.LoadScene("LoopRace", LoadSceneMode.Additive);
+        StartCoroutine(SwitchSceneAsync(currentScene, newScene));
+    }
+
+    private IEnumerator SwitchSceneAsync(string currentScene, string newScene)
+    {
+        // Load the new scene asynchronously
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(newScene, LoadSceneMode.Additive);
+
+        // Wait until the new scene is fully loaded
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // Once the new scene is loaded, set it as the active scene
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(newScene));
+
+        // Unload the old scene
+        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentScene);
+
+        // Wait until the old scene is fully unloaded
+        while (!asyncUnload.isDone)
+        {
+            yield return null;
+        }
+
+        print("Switched to new scene: " + newScene);
     }
 }

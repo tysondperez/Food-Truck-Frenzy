@@ -42,7 +42,7 @@ public class RacingNavMove : MonoBehaviour
 
         if (turnDirection > .5f || turnDirection < -.5f)
         {
-            print(turnDirection);
+            //print(turnDirection);
         }
     }
 
