@@ -27,14 +27,23 @@ public class RacingNavMove : MonoBehaviour
         {
             GotoNextPoint();
         }
-        anim.SetFloat("Speed", agent.velocity.magnitude);
+        
+        Vector3 agentVelocity = agent.velocity.normalized;
+        Vector3 forward = transform.forward;
+        float turnDirection = Vector3.Cross(forward, agentVelocity).y * 80f;
+        // Use turnDirection to update the animation parameter
+        anim.SetFloat("Direction", turnDirection);
         
         if (agent.velocity.magnitude > 0.1f) // Avoid unnecessary rotation when nearly stationary
         {
             Quaternion targetRotation = Quaternion.LookRotation(agent.velocity.normalized);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f); // Adjust the 5f for faster/slower rotation
         }
-        print(agent.velocity);
+
+        if (turnDirection > .5f || turnDirection < -.5f)
+        {
+            print(turnDirection);
+        }
     }
 
     void GotoNextPoint() {
