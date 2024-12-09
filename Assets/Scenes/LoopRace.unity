@@ -2228,7 +2228,7 @@ GameObject:
   - component: {fileID: 143082350}
   m_Layer: 0
   m_Name: InnerNavPoint (2)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3719,7 +3719,7 @@ GameObject:
   - component: {fileID: 243130383}
   m_Layer: 0
   m_Name: InnerNavPoint (1)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6075,7 +6075,7 @@ GameObject:
   - component: {fileID: 446835889}
   m_Layer: 0
   m_Name: InnerNavPoint (13)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6586,7 +6586,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f4dfaa2f79a3a4f8e6942c81914f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  racers: []
+  racers:
+  - {fileID: 7666285168998737530}
+  - {fileID: 1786542174}
+  - {fileID: 827341364}
+  - {fileID: 1571371038}
   checkpoints: []
 --- !u!4 &499012058
 Transform:
@@ -6621,7 +6625,7 @@ GameObject:
   - component: {fileID: 501650127}
   m_Layer: 0
   m_Name: InnerNavPoint (4)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6899,7 +6903,7 @@ GameObject:
   - component: {fileID: 512042362}
   m_Layer: 0
   m_Name: InnerNavPoint (7)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7494,7 +7498,7 @@ GameObject:
   - component: {fileID: 542892689}
   m_Layer: 0
   m_Name: InnerNavPoint (8)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8610,7 +8614,7 @@ GameObject:
   - component: {fileID: 623265246}
   m_Layer: 0
   m_Name: InnerNavPoint (19)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8962,7 +8966,7 @@ GameObject:
   - component: {fileID: 645752420}
   m_Layer: 0
   m_Name: InnerNavPoint (14)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10349,7 +10353,7 @@ GameObject:
   - component: {fileID: 721396381}
   m_Layer: 0
   m_Name: InnerNavPoint (3)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11889,6 +11893,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 87cc36a45a321ad478c47c9fec13dbd3, type: 3}
   m_PrefabInstance: {fileID: 1427624867}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &827341364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5898925972801569565, guid: 64204ef2d03494e4c970122ad5c7ec16, type: 3}
+  m_PrefabInstance: {fileID: 262356255871086189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &827341371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827341364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368577e0534d49e4689d551fa96f2570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckpoint: 0
+  finalCheckpoint: 0
+  currentLap: 0
+  raceProgress: 0
+  placement: 0
 --- !u!1001 &828031855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11971,7 +11997,7 @@ GameObject:
   - component: {fileID: 834041195}
   m_Layer: 0
   m_Name: InnerNavPoint (10)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13479,7 +13505,7 @@ GameObject:
   - component: {fileID: 970479685}
   m_Layer: 0
   m_Name: InnerNavPoint (18)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14229,7 +14255,7 @@ GameObject:
   - component: {fileID: 1034431783}
   m_Layer: 0
   m_Name: InnerNavPoint (6)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14830,7 +14856,7 @@ GameObject:
   - component: {fileID: 1101254742}
   m_Layer: 0
   m_Name: InnerNavPoint (9)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16671,7 +16697,7 @@ GameObject:
   - component: {fileID: 1250141137}
   m_Layer: 0
   m_Name: InnerNavPoint (16)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17607,7 +17633,7 @@ GameObject:
   - component: {fileID: 1298690536}
   m_Layer: 0
   m_Name: InnerNavPoint (12) - no
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18041,7 +18067,7 @@ GameObject:
   - component: {fileID: 1313756608}
   m_Layer: 0
   m_Name: InnerNavPoint (17)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19571,14 +19597,14 @@ Transform:
   - {fileID: 1101254740}
   - {fileID: 834041193}
   - {fileID: 1907815790}
-  - {fileID: 1298690536}
   - {fileID: 446835887}
   - {fileID: 645752418}
-  - {fileID: 1570521049}
   - {fileID: 1250141135}
   - {fileID: 1313756606}
   - {fileID: 970479683}
   - {fileID: 623265244}
+  - {fileID: 1298690536}
+  - {fileID: 1570521049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1437351642
@@ -20747,7 +20773,7 @@ GameObject:
   - component: {fileID: 1570521049}
   m_Layer: 0
   m_Name: InnerNavPoint (15) - no
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20767,6 +20793,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1571371038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 558396963697096547, guid: 1e42c1dd0c07c094b9b59fe0c33e69f3, type: 3}
+  m_PrefabInstance: {fileID: 1439092747212972942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1571371045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571371038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368577e0534d49e4689d551fa96f2570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckpoint: 0
+  finalCheckpoint: 0
+  currentLap: 0
+  raceProgress: 0
+  placement: 0
 --- !u!1001 &1573018245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20853,6 +20901,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   m_PrefabInstance: {fileID: 1573018245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1583338874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5119903281122033986, guid: e096a99ae369cae448722ebbbeda6758, type: 3}
+  m_PrefabInstance: {fileID: 283251962355055257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1583338879 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1314120968571149538, guid: e096a99ae369cae448722ebbbeda6758, type: 3}
+  m_PrefabInstance: {fileID: 283251962355055257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1583338880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583338874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f45a15faa02e754084473d2c0f9b112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1642145767}
+  player: {fileID: 7666285168998737530}
 --- !u!4 &1585648734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -21496,6 +21568,140 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 694e1313d3f12e84aaf959ff6960ddaf, type: 3}
+--- !u!1 &1642145766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642145769}
+  - component: {fileID: 1642145768}
+  - component: {fileID: 1642145767}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1642145767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642145766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 1
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 100
+  m_fontSizeBase: 100
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 38.780243, y: 0, z: 114.78534, w: -42.83972}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1642145768
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642145766}
+  m_CullTransparentMesh: 1
+--- !u!224 &1642145769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642145766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1583338879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.096270844, y: 0.8466297}
+  m_AnchorMax: {x: 0.096270844, y: 0.8466297}
+  m_AnchoredPosition: {x: 39, y: 15}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1647269606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21594,7 +21800,7 @@ GameObject:
   - component: {fileID: 1658209165}
   m_Layer: 0
   m_Name: InnerNavPoint (5)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23755,6 +23961,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 87cc36a45a321ad478c47c9fec13dbd3, type: 3}
   m_PrefabInstance: {fileID: 1784861109}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1786542174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6144436952077645745, guid: ebb75952ac96e8a499bc5a145c53b3fe, type: 3}
+  m_PrefabInstance: {fileID: 6115386704263371614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1786542181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786542174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368577e0534d49e4689d551fa96f2570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckpoint: 0
+  finalCheckpoint: 0
+  currentLap: 0
+  raceProgress: 0
+  placement: 0
 --- !u!1001 &1795223198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25233,7 +25461,7 @@ GameObject:
   - component: {fileID: 1907815792}
   m_Layer: 0
   m_Name: InnerNavPoint (11)
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27224,7 +27452,7 @@ GameObject:
   - component: {fileID: 2063386708}
   m_Layer: 0
   m_Name: InnerNavPoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28406,7 +28634,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5898925972801569565, guid: 64204ef2d03494e4c970122ad5c7ec16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827341371}
   m_SourcePrefab: {fileID: 100100000, guid: 64204ef2d03494e4c970122ad5c7ec16, type: 3}
 --- !u!1001 &283251962355055257
 PrefabInstance:
@@ -28502,8 +28733,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1314120968571149538, guid: e096a99ae369cae448722ebbbeda6758, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1642145769}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5119903281122033986, guid: e096a99ae369cae448722ebbbeda6758, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1583338880}
   m_SourcePrefab: {fileID: 100100000, guid: e096a99ae369cae448722ebbbeda6758, type: 3}
 --- !u!1001 &903179698758651266
 PrefabInstance:
@@ -28777,7 +29014,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 558396963697096547, guid: 1e42c1dd0c07c094b9b59fe0c33e69f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1571371045}
   m_SourcePrefab: {fileID: 100100000, guid: 1e42c1dd0c07c094b9b59fe0c33e69f3, type: 3}
 --- !u!1001 &6115386704263371614
 PrefabInstance:
@@ -28994,7 +29234,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6144436952077645745, guid: ebb75952ac96e8a499bc5a145c53b3fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1786542181}
   m_SourcePrefab: {fileID: 100100000, guid: ebb75952ac96e8a499bc5a145c53b3fe, type: 3}
 --- !u!1001 &7666285168998737529
 PrefabInstance:
@@ -29091,6 +29334,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7916890429224920093, guid: 237fce067394d1b409a7b517d493a764, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7666285168998737531}
+    - targetCorrespondingSourceObject: {fileID: 7916890429224920093, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7666285168998737536}
   m_SourcePrefab: {fileID: 100100000, guid: 237fce067394d1b409a7b517d493a764, type: 3}
 --- !u!1 &7666285168998737530 stripped
 GameObject:
@@ -29118,6 +29364,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7666285168998737536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666285168998737530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368577e0534d49e4689d551fa96f2570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCheckpoint: 0
+  finalCheckpoint: 0
+  currentLap: 0
+  raceProgress: 0
+  placement: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
