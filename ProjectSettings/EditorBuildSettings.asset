@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LoopRace.unity
     guid: 6d0df6b65f1496c448a18070d3053d18
   - enabled: 1
-    path: Assets/Scenes/CityLevel1.unity
+    path: Assets/Scenes/ChaseLevel.unity
     guid: a558eaea9afe8a549af75332587ca642
   - enabled: 1
-    path: Assets/Scenes/PortCityRace.unity
+    path: Assets/Scenes/TutorialLevel.unity
     guid: e9193886e503ffa49b9e55c998471d43
   m_configObjects: {}
