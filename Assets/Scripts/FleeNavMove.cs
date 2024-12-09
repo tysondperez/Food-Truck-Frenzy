@@ -8,10 +8,12 @@ public class FleeNavMove : MonoBehaviour
     [SerializeField] Transform player;
     NavMeshAgent agent;
     Animator animator;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
     }
 
     void Update()
