@@ -2224,6 +2224,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 143082348}
+  - component: {fileID: 143082349}
+  - component: {fileID: 143082350}
   m_Layer: 0
   m_Name: InnerNavPoint (2)
   m_TagString: Untagged
@@ -2246,6 +2248,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &143082349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143082347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &143082350
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143082347}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &143225322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -3679,6 +3715,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 243130381}
+  - component: {fileID: 243130382}
+  - component: {fileID: 243130383}
   m_Layer: 0
   m_Name: InnerNavPoint (1)
   m_TagString: Untagged
@@ -3701,6 +3739,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243130382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243130380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &243130383
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243130380}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &244276376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -5999,6 +6071,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 446835887}
+  - component: {fileID: 446835888}
+  - component: {fileID: 446835889}
   m_Layer: 0
   m_Name: InnerNavPoint (13)
   m_TagString: Untagged
@@ -6021,6 +6095,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446835888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446835886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &446835889
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446835886}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &450450059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -6449,6 +6557,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14aef9a05449784da6735de9ec90b24, type: 3}
+--- !u!1 &499012056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 499012058}
+  - component: {fileID: 499012057}
+  m_Layer: 0
+  m_Name: RaceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &499012057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499012056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f4dfaa2f79a3a4f8e6942c81914f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  racers: []
+  checkpoints: []
+--- !u!4 &499012058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499012056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.444347, y: -60.31912, z: 68.49073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &500053796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -6463,6 +6617,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501650125}
+  - component: {fileID: 501650126}
+  - component: {fileID: 501650127}
   m_Layer: 0
   m_Name: InnerNavPoint (4)
   m_TagString: Untagged
@@ -6485,6 +6641,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &501650126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501650124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &501650127
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501650124}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &504965728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -6705,6 +6895,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 512042360}
+  - component: {fileID: 512042361}
+  - component: {fileID: 512042362}
   m_Layer: 0
   m_Name: InnerNavPoint (7)
   m_TagString: Untagged
@@ -6727,6 +6919,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &512042361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512042359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &512042362
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512042359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &512604803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7264,6 +7490,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542892687}
+  - component: {fileID: 542892688}
+  - component: {fileID: 542892689}
   m_Layer: 0
   m_Name: InnerNavPoint (8)
   m_TagString: Untagged
@@ -7286,6 +7514,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &542892688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542892686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &542892689
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542892686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &543226327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -8344,6 +8606,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623265244}
+  - component: {fileID: 623265245}
+  - component: {fileID: 623265246}
   m_Layer: 0
   m_Name: InnerNavPoint (19)
   m_TagString: Untagged
@@ -8366,6 +8630,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &623265245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623265243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &623265246
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623265243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &625382209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8660,6 +8958,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 645752418}
+  - component: {fileID: 645752419}
+  - component: {fileID: 645752420}
   m_Layer: 0
   m_Name: InnerNavPoint (14)
   m_TagString: Untagged
@@ -8682,6 +8982,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &645752419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645752417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &645752420
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645752417}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &646185143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10011,6 +10345,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 721396379}
+  - component: {fileID: 721396380}
+  - component: {fileID: 721396381}
   m_Layer: 0
   m_Name: InnerNavPoint (3)
   m_TagString: Untagged
@@ -10033,6 +10369,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &721396380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721396378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &721396381
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721396378}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &722421832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -11597,6 +11967,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 834041193}
+  - component: {fileID: 834041194}
+  - component: {fileID: 834041195}
   m_Layer: 0
   m_Name: InnerNavPoint (10)
   m_TagString: Untagged
@@ -11619,6 +11991,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834041194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834041192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &834041195
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834041192}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &840859288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13069,6 +13475,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970479683}
+  - component: {fileID: 970479684}
+  - component: {fileID: 970479685}
   m_Layer: 0
   m_Name: InnerNavPoint (18)
   m_TagString: Untagged
@@ -13091,6 +13499,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970479684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970479682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &970479685
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970479682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &970489691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13783,6 +14225,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034431781}
+  - component: {fileID: 1034431782}
+  - component: {fileID: 1034431783}
   m_Layer: 0
   m_Name: InnerNavPoint (6)
   m_TagString: Untagged
@@ -13805,6 +14249,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1034431782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034431780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &1034431783
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034431780}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1034687640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
@@ -14348,6 +14826,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101254740}
+  - component: {fileID: 1101254741}
+  - component: {fileID: 1101254742}
   m_Layer: 0
   m_Name: InnerNavPoint (9)
   m_TagString: Untagged
@@ -14370,6 +14850,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1101254741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101254739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &1101254742
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101254739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1101761508 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -16153,6 +16667,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250141135}
+  - component: {fileID: 1250141136}
+  - component: {fileID: 1250141137}
   m_Layer: 0
   m_Name: InnerNavPoint (16)
   m_TagString: Untagged
@@ -16175,6 +16691,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250141136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250141134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &1250141137
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250141134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1251875776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17056,7 +17606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298690536}
   m_Layer: 0
-  m_Name: InnerNavPoint (12)
+  m_Name: InnerNavPoint (12) - no
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -17487,6 +18037,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313756606}
+  - component: {fileID: 1313756607}
+  - component: {fileID: 1313756608}
   m_Layer: 0
   m_Name: InnerNavPoint (17)
   m_TagString: Untagged
@@ -17509,6 +18061,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313756607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313756605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &1313756608
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313756605}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1318174197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b3300d2ba52ecf409c9523f2eff5bbd, type: 3}
@@ -20160,7 +20746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570521049}
   m_Layer: 0
-  m_Name: InnerNavPoint (15)
+  m_Name: InnerNavPoint (15) - no
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -21004,6 +21590,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1658209163}
+  - component: {fileID: 1658209164}
+  - component: {fileID: 1658209165}
   m_Layer: 0
   m_Name: InnerNavPoint (5)
   m_TagString: Untagged
@@ -21026,6 +21614,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1658209164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658209162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &1658209165
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658209162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1659329263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -24607,6 +25229,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1907815790}
+  - component: {fileID: 1907815791}
+  - component: {fileID: 1907815792}
   m_Layer: 0
   m_Name: InnerNavPoint (11)
   m_TagString: Untagged
@@ -24629,6 +25253,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1907815791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907815789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &1907815792
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907815789}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1911593346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b3300d2ba52ecf409c9523f2eff5bbd, type: 3}
@@ -26562,6 +27220,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063386706}
+  - component: {fileID: 2063386707}
+  - component: {fileID: 2063386708}
   m_Layer: 0
   m_Name: InnerNavPoint
   m_TagString: Untagged
@@ -26584,6 +27244,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1428064484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063386707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063386705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47eeba69b916eb45b61d349ec2662f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointIndex: -1
+--- !u!135 &2063386708
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063386705}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2067855271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28445,3 +29139,4 @@ SceneRoots:
   - {fileID: 412127416}
   - {fileID: 398661498}
   - {fileID: 903179698758651266}
+  - {fileID: 499012058}
