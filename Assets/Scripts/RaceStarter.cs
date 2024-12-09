@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class RaceStarter : MonoBehaviour
 {
-    [SerializeField] MonoBehaviour aiMovement;
-    [SerializeField] MonoBehaviour playerMovement;
+    [SerializeField] MonoBehaviour[] MovementScripts;
 
     [SerializeField] Light red;
     [SerializeField] Light yellow;
     [SerializeField] Light green;
+
+    public AudioSource audioSource;
+    public AudioClip countdownSound;
 
     float countdown = 3f;
     bool countActive = false;
@@ -18,7 +20,10 @@ public class RaceStarter : MonoBehaviour
     {
         DisableCharacters();
         countActive = true;
-
+        if (audioSource != null && countdownSound != null)
+        {
+            audioSource.PlayOneShot(countdownSound);
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -29,18 +34,17 @@ public class RaceStarter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(countdown);
+        //print(countdown);
         if (countActive)
         {
             countdown -= Time.deltaTime;
-
             if (countdown <= 0)
             {
                 EnableCharacter();
                 green.enabled = true;
                 yellow.enabled = false;
                 countActive = false;
-            } else if (countdown <= 1.5)
+            } else if (countdown <= 2)
             {
                 red.enabled = false;
                 yellow.enabled = true;
@@ -50,13 +54,17 @@ public class RaceStarter : MonoBehaviour
 
     void DisableCharacters()
     {
-        aiMovement.enabled = false;
-        playerMovement.enabled = false;
+        foreach (MonoBehaviour script in MovementScripts)
+        {
+            script.enabled = false;
+        }
     }
 
     void EnableCharacter()
     {
-        aiMovement.enabled = true;
-        playerMovement.enabled = true;
+        foreach (MonoBehaviour script in MovementScripts)
+        {
+            script.enabled = true;
+        }
     }
 }

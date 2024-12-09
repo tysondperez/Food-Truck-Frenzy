@@ -63,4 +63,12 @@ public class FleeNavMove : MonoBehaviour
             bestPoint = navPoints[Random.Range(0, navPoints.Length)];
         }
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            print("You win!");
+        }
+    }
 }
