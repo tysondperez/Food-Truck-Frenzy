@@ -9,7 +9,7 @@ public class TutorialManager : MonoBehaviour
     public string[] tutorialSteps;  // Array of tutorial instructions
     private int currentStep = 0;  // Keeps track of the current step in the tutorial
 
-    public MonoBehaviour tutorialAI;
+    [SerializeField] MonoBehaviour[] tutorialAI;
 
     public bool isPaused = false;
     private float pausedTimeScale;
@@ -17,7 +17,13 @@ public class TutorialManager : MonoBehaviour
 
     void Awake()
     {
-        tutorialAI.enabled = false;
+        foreach (MonoBehaviour step in tutorialAI)
+        {
+            if (step != null)
+            {
+                step.enabled = false;
+            }
+        }
     }
     void Start()
     {
@@ -51,7 +57,13 @@ public class TutorialManager : MonoBehaviour
 
         if (currentStep == 4)
         {
-            tutorialAI.enabled = true;
+            foreach (MonoBehaviour step in tutorialAI)
+            {
+                if (step != null)
+                {
+                    step.enabled = true;
+                }
+            }
         }
 
         if (currentStep == 5)
@@ -85,17 +97,7 @@ public class TutorialManager : MonoBehaviour
             {
                 DisplayTutorialStep();
             }
-            else
-            {
-                EndTutorial();
-            }
         }
-    }
-
-    void EndTutorial()
-    {
-        tutorialText.text = "That's the tutorial! Now you've learned everything you need to finish this race out! Go get 'em!";
-
     }
 
     public void Pause()
