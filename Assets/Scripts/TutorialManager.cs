@@ -8,6 +8,11 @@ public class TutorialManager : MonoBehaviour
     private int currentStep = 0;  // Keeps track of the current step in the tutorial
 
     public MonoBehaviour tutorialAI;
+
+    public bool isPaused = false;
+    private float pausedTimeScale;
+    public GameObject panel;
+
     void Awake()
     {
         tutorialAI.enabled = false;
@@ -23,7 +28,10 @@ public class TutorialManager : MonoBehaviour
         // Listen for player input to move to the next tutorial step (e.g., pressing a key)
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            NextTutorialStep();
+            if (isPaused)
+            {
+                Unpause();
+            }
         }
     }
 
@@ -52,5 +60,43 @@ public class TutorialManager : MonoBehaviour
 
         // Display the next tutorial step
         DisplayTutorialStep();
+    }
+
+    public void OnPlayerEnter(int tutorialStep)
+    {
+        if (tutorialStep == currentStep)
+        {
+            currentStep++;
+            Pause();
+            if (currentStep < tutorialSteps.Length)
+            {
+                DisplayTutorialStep();
+            }
+            else
+            {
+                EndTutorial();
+            }
+        }
+    }
+
+    void EndTutorial()
+    {
+        tutorialText.text = "That's the tutorial! Now you've learned everything you need to finish this race out! Go get 'em!";
+
+    }
+
+    public void Pause()
+    {
+        panel.SetActive(true);
+        isPaused = true;
+        pausedTimeScale = Time.timeScale;
+        Time.timeScale = 0;
+    }
+
+    public void Unpause()
+    {
+        panel.SetActive(false);
+        isPaused = false;
+        Time.timeScale = pausedTimeScale;
     }
 }
