@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
@@ -51,6 +53,17 @@ public class TutorialManager : MonoBehaviour
         {
             tutorialAI.enabled = true;
         }
+
+        if (currentStep == 5)
+        {
+            StartCoroutine(Switch());
+        }
+    }
+    
+    private IEnumerator Switch()
+    {
+        yield return new WaitForSeconds(1);
+        GameManager.Instance.SwitchScene(SceneManager.GetActiveScene().name, "LevelSelect");
     }
 
     void NextTutorialStep()

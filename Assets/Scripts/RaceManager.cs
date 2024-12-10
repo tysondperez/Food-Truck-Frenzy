@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RaceManager : MonoBehaviour
 {
     public GameObject[] racers;
     public static Checkpoint[] checkpoints;
+    public bool switching = false;
     private readonly float[] boosts = {
         0f, 5f, 10f, 15f
     };
@@ -72,6 +74,31 @@ public class RaceManager : MonoBehaviour
                 }
             }
         }
+        
+        RacingData playerData = racers[0].GetComponent<RacingData>();
+        if (playerData.currentLap == 4 && !switching)
+        {
+            for (int i = 0; i < racers.Length; i++)
+            {
+                if (i == 0)
+                {
+                    racers[i].GetComponent<TruckMovement>().enabled = false;
+                }
+                else
+                {
+                    racers[i].GetComponent<RacingNavMove>().enabled = false;
+                }
+            }
+            StartCoroutine(Switch());
+            switching = true;
+        }
+        
+    }
+    
+    private IEnumerator Switch()
+    {
+        yield return new WaitForSeconds(2);
+        GameManager.Instance.SwitchScene(SceneManager.GetActiveScene().name, "LevelSelect");
     }
 
     public GameObject GetFirstPlaceRacer()

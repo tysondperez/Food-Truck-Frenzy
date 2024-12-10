@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
@@ -38,5 +39,20 @@ public class PauseController : MonoBehaviour
         panel.SetActive(false);
         isPaused = false;
         Time.timeScale = pausedTimeScale;
+    }
+    
+    public void LoadLevelSelect()
+    {
+        Unpause();
+        print("triggered");
+        print("Active scene in proxy: " + SceneManager.GetActiveScene().name);
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.SwitchScene(SceneManager.GetActiveScene().name, "LevelSelect");
+        }
+        else
+        {
+            Debug.LogError("GameManager is not initialized!");
+        }
     }
 }

@@ -12,6 +12,8 @@ public class FleeNavMove : MonoBehaviour
     [SerializeField] Transform[] navPoints;
     Transform bestPoint;
     float minimumAngle = 90f;
+    
+    private float pausedTimeScale;
 
     void Start()
     {
@@ -68,7 +70,17 @@ public class FleeNavMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print("You win!");
+            GameManager.Instance.playerHasBoost = true;
+
+            this.enabled = false;
+            player.GetComponent<TruckMovement>().enabled = false;
+            StartCoroutine(Switch());
         }
+    }
+
+    private IEnumerator Switch()
+    {
+        yield return new WaitForSeconds(2);
+        GameManager.Instance.SwitchScene("ChaseLevel", "LevelSelect");
     }
 }
