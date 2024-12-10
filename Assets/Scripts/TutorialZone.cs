@@ -16,6 +16,8 @@ public class TutorialZone : MonoBehaviour
             {
                 tutorialManager.OnPlayerEnter(tutorialIndex);
             }
+
+            Destroy(gameObject);
         }
     }
 }
