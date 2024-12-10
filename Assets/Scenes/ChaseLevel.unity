@@ -7690,6 +7690,26 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d1a5029f441b43e49bce4c7d620055fd, type: 2}
+    - target: {fileID: 6139058649925876286, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.98910344
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139058649925876286, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.14722276
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139058649925876286, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139058649925876286, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139058649925876286, guid: 237fce067394d1b409a7b517d493a764, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 16.932
+      objectReference: {fileID: 0}
     - target: {fileID: 7916890429224920093, guid: 237fce067394d1b409a7b517d493a764, type: 3}
       propertyPath: m_Name
       value: TacoTruck
