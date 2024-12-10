@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     
     //player data goes here?
+    public bool playerHasBoost;
 
     private void Awake()
     {

@@ -12,13 +12,22 @@ public class TruckMovement : MonoBehaviour
     
     private float turnSpeed = 3f;
     public float maxSpeed = 40f;
-    public float catchupBoost = 0f;
+    
     public float acceleration = 20f;
     public float deceleration = 15f;
     public float currentSpeed = 0f;
+    //public float extraGravityForce = 30f;
     
     [SerializeField] private float turnLerpSpeed = 5f; // Adjust for smoothness
     private float currentDirection = 0f;
+    
+    public bool boostCapable;
+    public float tacticalBoost = 0f;
+    public bool tacBoosting = false;
+    public float boostCooldown = 2f;
+    public float boostDuration = 5f;
+    
+    public float catchupBoost = 0f;
     
     /*[SerializeField] private Transform frontRaycastOrigin;
     [SerializeField] private Transform backRaycastOrigin;
@@ -39,6 +48,21 @@ public class TruckMovement : MonoBehaviour
         float targetTurnInput = Input.GetAxis("Horizontal");
         currentDirection = Mathf.Lerp(currentDirection, targetTurnInput, Time.deltaTime * turnLerpSpeed);
         anim.SetFloat("Direction", currentDirection);
+        
+        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance != null)
+        {
+            if (!tacBoosting && GameManager.Instance.playerHasBoost)
+            {
+                tacBoosting = true;
+                tacticalBoost = 30f;
+                if (transform.Find("Particles") != null)
+                {
+                    transform.Find("Particles").gameObject.SetActive(true);
+                }
+
+                StartCoroutine(TurnBoostOff());
+            }
+        }
     }
 
     void FixedUpdate()
@@ -66,7 +90,7 @@ public class TruckMovement : MonoBehaviour
             }
         }
         // Clamp the current speed to avoid exceeding max speed or going below 0 (for forward movement)
-        currentSpeed = Mathf.Clamp(currentSpeed, -(maxSpeed / 4f), (maxSpeed + catchupBoost));
+        currentSpeed = Mathf.Clamp(currentSpeed, -(maxSpeed / 4f), (maxSpeed + catchupBoost + tacticalBoost));
 
         Vector2 moveInput = new Vector2 (0f, moveVertical); //include horizontal if you want strafe
         
@@ -84,8 +108,31 @@ public class TruckMovement : MonoBehaviour
         {
             rigidbody.MoveRotation(rigidbody.rotation * deltaRotation);
         }
+        
+        // if (rigidbody.velocity.y < 0) // Falling
+        // {
+        //     print("falling " + Time.time);
+        //     rigidbody.AddForce(Vector3.down * extraGravityForce, ForceMode.Acceleration);
+        // }
 
         //DoTiltRaycasts();
+    }
+    
+    private IEnumerator TurnBoostOff()
+    {
+        yield return new WaitForSeconds(boostDuration);
+        tacticalBoost = 0f;
+        if (transform.Find("Particles") != null)
+        {
+            transform.Find("Particles").gameObject.SetActive(false);
+        }
+        StartCoroutine(BoostCooldown());
+    }
+
+    private IEnumerator BoostCooldown()
+    {
+        yield return new WaitForSeconds(boostCooldown);
+        tacBoosting = false;
     }
 
     /*private void DoTiltRaycasts()

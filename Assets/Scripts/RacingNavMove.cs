@@ -18,7 +18,7 @@ public class RacingNavMove : MonoBehaviour
     public float tacticalBoost = 0f;
     public bool tacBoosting = false;
     public float maxBoostChance = 0.8f;
-    public float boostCooldown = 10f;
+    public float boostCooldown = 15f;
     public float boostDuration = 5f;
     public float decisionDelay = 2f;
     private bool canCheckBoost = true;
@@ -90,7 +90,6 @@ public class RacingNavMove : MonoBehaviour
         float percentDone = (float) data.currentCheckpoint / data.finalCheckpoint;
         float boostChance = Mathf.Lerp(0.01f, maxBoostChance, percentDone);
         float rand = Random.value;
-        print(rand + " vs. chance of "+ boostChance + ", resulted in: " + (rand < boostChance));
         if (rand < boostChance)
         {
             StartBoost();
