@@ -6,7 +6,10 @@ using UnityEngine;
 public class RaceManager : MonoBehaviour
 {
     public GameObject[] racers;
-    public Checkpoint[] checkpoints;
+    public static Checkpoint[] checkpoints;
+    private readonly float[] boosts = {
+        0f, 5f, 10f, 15f
+    };
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,6 @@ public class RaceManager : MonoBehaviour
         foreach (Checkpoint checkpoint in checkpoints)
         {
             checkpoint.checkpointIndex = checkpoint.transform.GetSiblingIndex();
-            //print(checkpoint.name + " : " + checkpoint.checkpointIndex);
         }
         System.Array.Sort(checkpoints, (a, b) => a.checkpointIndex.CompareTo(b.checkpointIndex));
         
@@ -34,13 +36,63 @@ public class RaceManager : MonoBehaviour
             float distance = CalculateDistance(racers[i]);
             racers[i].GetComponent<RacingData>().UpdateRaceProgress(distance);
         }
+        
+        GameObject firstPlaceRacer = GetFirstPlaceRacer();
+        
         for (int i = 0; i < racers.Length; i++)
         {
-            UpdatePlacement(racers[i]);
+            int place = UpdatePlacement(racers[i]);
+            RacingData racerData = racers[i].GetComponent<RacingData>();
+
+            // Calculate distance to the first-place racer
+            float distanceToFirst = Vector3.Distance(racers[i].transform.position, firstPlaceRacer.transform.position);
+
+            // Apply catch-up boost only if the racer is 100 or more units away from 1st place
+            if (distanceToFirst >= 20f)
+            {
+                if (racers[i].CompareTag("Player"))
+                {
+                    racers[i].GetComponent<TruckMovement>().catchupBoost = boosts[place - 1];
+                }
+                else
+                {
+                    racers[i].GetComponent<RacingNavMove>().catchupBoost = boosts[place - 1];
+                }
+            }
+            else
+            {
+                // Reset boost if the condition is not met
+                if (racers[i].CompareTag("Player"))
+                {
+                    racers[i].GetComponent<TruckMovement>().catchupBoost = 0f;
+                }
+                else
+                {
+                    racers[i].GetComponent<RacingNavMove>().catchupBoost = 0f;
+                }
+            }
         }
     }
 
-    public void UpdatePlacement(GameObject racer)
+    public GameObject GetFirstPlaceRacer()
+    {
+        GameObject firstPlaceRacer = null;
+        float highestProgress = float.MinValue;
+
+        foreach (GameObject racer in racers)
+        {
+            float progress = racer.GetComponent<RacingData>().raceProgress;
+            if (progress > highestProgress)
+            {
+                highestProgress = progress;
+                firstPlaceRacer = racer;
+            }
+        }
+
+        return firstPlaceRacer;
+    }
+
+    public int UpdatePlacement(GameObject racer)
     {
         RacingData data = racer.GetComponent<RacingData>();
         int placement = 1;
@@ -55,6 +107,7 @@ public class RaceManager : MonoBehaviour
             }
         }
         data.placement = placement;
+        return placement;
     }
 
     public float CalculateDistance(GameObject racer)

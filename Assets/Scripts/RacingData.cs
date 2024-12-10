@@ -29,12 +29,30 @@ public class RacingData : MonoBehaviour
             {
                 currentLap++;
                 currentCheckpoint = 0;
+                if (CompareTag("Player"))
+                {
+                   other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                   RaceManager.checkpoints[0].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                }
             }
             else if (currentCheckpoint == newInd - 1)
             {
                 currentCheckpoint = newInd;
+                if (CompareTag("Player"))
+                {
+                    other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    RaceManager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                }
+            } 
+            else if (currentCheckpoint == 0 && newInd == 0)
+            {
+                if (CompareTag("Player"))
+                {
+                    other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    RaceManager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                }
             }
-            print(currentCheckpoint);
+            //print(currentCheckpoint);
         }
     }
 }

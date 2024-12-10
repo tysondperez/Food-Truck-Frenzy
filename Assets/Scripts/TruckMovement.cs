@@ -12,6 +12,7 @@ public class TruckMovement : MonoBehaviour
     
     private float turnSpeed = 3f;
     public float maxSpeed = 40f;
+    public float catchupBoost = 0f;
     public float acceleration = 20f;
     public float deceleration = 15f;
     public float currentSpeed = 0f;
@@ -65,7 +66,7 @@ public class TruckMovement : MonoBehaviour
             }
         }
         // Clamp the current speed to avoid exceeding max speed or going below 0 (for forward movement)
-        currentSpeed = Mathf.Clamp(currentSpeed, -(maxSpeed / 4f), maxSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed, -(maxSpeed / 4f), (maxSpeed + catchupBoost));
 
         Vector2 moveInput = new Vector2 (0f, moveVertical); //include horizontal if you want strafe
         
