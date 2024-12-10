@@ -65,11 +65,6 @@ public class TutorialManager : MonoBehaviour
                 }
             }
         }
-
-        if (currentStep == 5)
-        {
-            StartCoroutine(Switch());
-        }
     }
     
     private IEnumerator Switch()
@@ -97,6 +92,11 @@ public class TutorialManager : MonoBehaviour
             {
                 DisplayTutorialStep();
             }
+        }
+        
+        if (tutorialStep == 5)
+        {
+            StartCoroutine(Switch());
         }
     }
 
