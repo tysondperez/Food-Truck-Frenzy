@@ -15,6 +15,12 @@ public class FleeNavMove : MonoBehaviour
     
     private float pausedTimeScale;
 
+    public GameObject panel;
+
+    private void Awake()
+    {
+        panel.SetActive(false);
+    }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -70,6 +76,7 @@ public class FleeNavMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            panel.SetActive(true);
             GameManager.Instance.playerHasBoost = true;
 
             this.enabled = false;
