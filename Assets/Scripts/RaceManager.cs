@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,12 @@ public class RaceManager : MonoBehaviour
     private readonly float[] boosts = {
         0f, 5f, 10f, 15f
     };
+
+    private readonly float megaBoost = 15f;
+
+    public Canvas winCanvas;
+    public TextMeshProUGUI winText;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +33,10 @@ public class RaceManager : MonoBehaviour
         
         for (int i = 0; i < racers.Length; i++)
         {
-            racers[i].GetComponent<RacingData>().finalCheckpoint = checkpoints[^1].checkpointIndex;
+            RacingData data = racers[i].GetComponent<RacingData>();
+            data.finalCheckpoint = checkpoints[^1].checkpointIndex;
         }
+        print("started");
     }
 
     // Update is called once per frame
@@ -49,7 +58,7 @@ public class RaceManager : MonoBehaviour
             // Calculate distance to the first-place racer
             float distanceToFirst = Vector3.Distance(racers[i].transform.position, firstPlaceRacer.transform.position);
 
-            // Apply catch-up boost only if the racer is 100 or more units away from 1st place
+            // Apply catch-up boost only if the racer is 20 or more units away from 1st place
             if (distanceToFirst >= 20f)
             {
                 if (racers[i].CompareTag("Player"))
@@ -59,6 +68,34 @@ public class RaceManager : MonoBehaviour
                 else
                 {
                     racers[i].GetComponent<RacingNavMove>().catchupBoost = boosts[place - 1];
+                }
+
+                if (distanceToFirst >= 300f && !racerData.megaBoosting)
+                {
+                    racerData.megaBoosting = true;
+                    if (racers[i].CompareTag("Player"))
+                    {
+                        racers[i].GetComponent<TruckMovement>().megaBoost = megaBoost;
+                    }
+                    else
+                    {
+                        racers[i].GetComponent<RacingNavMove>().megaBoost = megaBoost;
+                    }
+                    print("racer "+i+" is outside of 300m, enabling mega boost");
+                }
+
+                if (distanceToFirst <= 50f && racerData.megaBoosting)
+                {
+                    racerData.megaBoosting = false;
+                    if (racers[i].CompareTag("Player"))
+                    {
+                        racers[i].GetComponent<TruckMovement>().megaBoost = 0f;
+                    }
+                    else
+                    {
+                        racers[i].GetComponent<RacingNavMove>().megaBoost = 0f;
+                    }
+                    print("racer "+i+" is inside of 50m, disabling mega boost");
                 }
             }
             else
@@ -76,23 +113,36 @@ public class RaceManager : MonoBehaviour
         }
         
         RacingData playerData = racers[0].GetComponent<RacingData>();
-        if (playerData.currentLap == (playerData.numLaps + 1) && !switching)
+        if (playerData.lapsCompleted == (playerData.totalLaps) && !switching)
         {
+            racers[0].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            racers[0].GetComponent<TruckMovement>().enabled = false;
             for (int i = 0; i < racers.Length; i++)
             {
-                if (i == 0)
-                {
-                    racers[i].GetComponent<TruckMovement>().enabled = false;
-                }
-                else
-                {
-                    racers[i].GetComponent<RacingNavMove>().enabled = false;
-                }
+                racers[i].GetComponent<RacingNavMove>().enabled = false;
             }
+
+            ShowRaceEnd(playerData.placement);
             StartCoroutine(Switch());
             switching = true;
         }
         
+    }
+
+    public void ShowRaceEnd(int placement)
+    {
+        switch (placement)
+        {
+            case 1: winText.text = "You finished the race! You placed 1st!";
+                break;
+            case 2: winText.text = "You finished the race! You placed 2nd!";
+                break;
+            case 3: winText.text = "You finished the race! You placed 3rd.";
+                break;
+            case 4: winText.text = "You finished the race! You placed 4th.";
+                break;
+        }
+        winCanvas.gameObject.SetActive(true);
     }
     
     private IEnumerator Switch()

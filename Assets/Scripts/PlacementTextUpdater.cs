@@ -28,7 +28,7 @@ public class PlacementTextUpdater : MonoBehaviour
             case 3: placeText.text = "3rd"; break;
             case 4: placeText.text = "4th"; break;
         }
-        lapText.text = "Lap " + (data.currentLap + 1) + "/" + data.numLaps;
+        lapText.text = "Lap " + (data.lapsCompleted + 1) + "/" + data.totalLaps;
         checkText.text = "Checkpoint " + (data.currentCheckpoint + 1) + "/" + data.finalCheckpoint;
     }
 }

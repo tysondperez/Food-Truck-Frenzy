@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RacingData : MonoBehaviour
 {
     // Start is called before the first frame update
     public int currentCheckpoint;
     public int finalCheckpoint;
-    public int currentLap = 1;
-    public readonly int numLaps = 3;
+    [FormerlySerializedAs("currentLap")] public int lapsCompleted = 1;
+    public readonly int totalLaps = 3;
 
     public float raceProgress;
     public int placement = 1;
+
+    public bool megaBoosting;
     
     public AudioSource audioSource;
     public AudioClip checkpointSound;
@@ -19,7 +22,7 @@ public class RacingData : MonoBehaviour
     // Update is called once per frame
     public void UpdateRaceProgress(float distance)
     {
-        raceProgress = currentLap * 50000f; // Give laps high weight
+        raceProgress = lapsCompleted * 50000f; // Give laps high weight
         raceProgress += currentCheckpoint * 1000f; // Medium weight for checkpoints
         raceProgress -= distance; // Lower distance is better
     }
@@ -31,7 +34,7 @@ public class RacingData : MonoBehaviour
             int newInd = other.gameObject.GetComponent<Checkpoint>().checkpointIndex;
             if (newInd == finalCheckpoint && currentCheckpoint == finalCheckpoint - 1)
             {
-                currentLap++;
+                lapsCompleted++;
                 currentCheckpoint = 0;
                 if (CompareTag("Player"))
                 {

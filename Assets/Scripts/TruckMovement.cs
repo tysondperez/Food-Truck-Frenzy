@@ -24,10 +24,11 @@ public class TruckMovement : MonoBehaviour
     public bool boostCapable;
     public float tacticalBoost = 0f;
     public bool tacBoosting = false;
-    public float boostCooldown = 2f;
+    public float boostCooldown = 3f;
     public float boostDuration = 5f;
     
     public float catchupBoost = 0f;
+    public float megaBoost = 0f;
     
     /*[SerializeField] private Transform frontRaycastOrigin;
     [SerializeField] private Transform backRaycastOrigin;
@@ -90,7 +91,7 @@ public class TruckMovement : MonoBehaviour
             }
         }
         // Clamp the current speed to avoid exceeding max speed or going below 0 (for forward movement)
-        currentSpeed = Mathf.Clamp(currentSpeed, -(maxSpeed / 4f), (maxSpeed + catchupBoost + tacticalBoost));
+        currentSpeed = Mathf.Clamp(currentSpeed, -(maxSpeed / 4f), (maxSpeed + catchupBoost + megaBoost + tacticalBoost));
 
         Vector2 moveInput = new Vector2 (0f, moveVertical); //include horizontal if you want strafe
         

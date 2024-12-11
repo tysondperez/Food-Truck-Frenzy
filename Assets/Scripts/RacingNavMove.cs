@@ -11,6 +11,7 @@ public class RacingNavMove : MonoBehaviour
     private Animator anim;
     
     public float catchupBoost = 0f;
+    public float megaBoost = 0f;
     
     public float baseSpeed = 40f;
 
@@ -61,11 +62,11 @@ public class RacingNavMove : MonoBehaviour
         
         if (boostCapable)
         {
-            agent.speed = baseSpeed + catchupBoost + tacticalBoost;
+            agent.speed = baseSpeed + catchupBoost + megaBoost + tacticalBoost;
         }
         else
         {
-            agent.speed = baseSpeed + catchupBoost;
+            agent.speed = baseSpeed + catchupBoost + megaBoost;
         }
         
     }
