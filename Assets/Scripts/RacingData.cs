@@ -7,10 +7,14 @@ public class RacingData : MonoBehaviour
     // Start is called before the first frame update
     public int currentCheckpoint;
     public int finalCheckpoint;
-    public int currentLap;
+    public int currentLap = 1;
+    public readonly int numLaps = 3;
 
     public float raceProgress;
     public int placement = 1;
+    
+    public AudioSource audioSource;
+    public AudioClip checkpointSound;
 
     // Update is called once per frame
     public void UpdateRaceProgress(float distance)
@@ -32,7 +36,11 @@ public class RacingData : MonoBehaviour
                 if (CompareTag("Player"))
                 {
                    other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                   RaceManager.checkpoints[0].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                   RaceManager.checkpoints[0].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                   if (audioSource != null && checkpointSound != null)
+                   {
+                       audioSource.PlayOneShot(checkpointSound);
+                   }
                 }
             }
             else if (currentCheckpoint == newInd - 1)
@@ -42,6 +50,10 @@ public class RacingData : MonoBehaviour
                 {
                     other.gameObject.GetComponent<MeshRenderer>().enabled = false;
                     RaceManager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                    if (audioSource != null && checkpointSound != null)
+                    {
+                        audioSource.PlayOneShot(checkpointSound);
+                    }
                 }
             } 
             else if (currentCheckpoint == 0 && newInd == 0)
@@ -50,6 +62,10 @@ public class RacingData : MonoBehaviour
                 {
                     other.gameObject.GetComponent<MeshRenderer>().enabled = false;
                     RaceManager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                    if (audioSource != null && checkpointSound != null)
+                    {
+                        audioSource.PlayOneShot(checkpointSound);
+                    }
                 }
             }
             //print(currentCheckpoint);

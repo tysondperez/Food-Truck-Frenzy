@@ -84,7 +84,11 @@ public class TutorialManager : MonoBehaviour
 
     public void OnPlayerEnter(int tutorialStep)
     {
-        if (tutorialStep == currentStep)
+        if (tutorialStep == 5)
+        {
+            StartCoroutine(Switch());
+        }
+        else if (tutorialStep == currentStep)
         {
             currentStep++;
             Pause();
@@ -94,10 +98,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
         
-        if (tutorialStep == 5)
-        {
-            StartCoroutine(Switch());
-        }
+        
     }
 
     public void Pause()

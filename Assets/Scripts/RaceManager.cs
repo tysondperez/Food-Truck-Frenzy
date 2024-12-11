@@ -76,7 +76,7 @@ public class RaceManager : MonoBehaviour
         }
         
         RacingData playerData = racers[0].GetComponent<RacingData>();
-        if (playerData.currentLap == 4 && !switching)
+        if (playerData.currentLap == (playerData.numLaps + 1) && !switching)
         {
             for (int i = 0; i < racers.Length; i++)
             {

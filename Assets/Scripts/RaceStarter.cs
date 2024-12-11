@@ -38,13 +38,13 @@ public class RaceStarter : MonoBehaviour
         if (countActive)
         {
             countdown -= Time.deltaTime;
-            if (countdown <= 0)
+            if (countdown <= .5)
             {
                 EnableCharacter();
                 green.enabled = true;
                 yellow.enabled = false;
                 countActive = false;
-            } else if (countdown <= 2)
+            } else if (countdown <= 1.5)
             {
                 red.enabled = false;
                 yellow.enabled = true;
