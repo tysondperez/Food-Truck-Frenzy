@@ -7,9 +7,9 @@ public class TutorialManager : MonoBehaviour
 {
     public Text tutorialText;  // Reference to the UI Text element
     public string[] tutorialSteps;  // Array of tutorial instructions
-    private int currentStep = 0;  // Keeps track of the current step in the tutorial
+    public int currentStep = 0;  // Keeps track of the current step in the tutorial
 
-    [SerializeField] MonoBehaviour[] tutorialAI;
+    [SerializeField] GameObject[] tutorialAI;
 
     public bool isPaused = false;
     private float pausedTimeScale;
@@ -17,13 +17,7 @@ public class TutorialManager : MonoBehaviour
 
     void Awake()
     {
-        foreach (MonoBehaviour step in tutorialAI)
-        {
-            if (step != null)
-            {
-                step.enabled = false;
-            }
-        }
+        
     }
     void Start()
     {
@@ -57,20 +51,19 @@ public class TutorialManager : MonoBehaviour
 
         if (currentStep == 4)
         {
-            foreach (MonoBehaviour step in tutorialAI)
+            foreach (GameObject truck in tutorialAI)
             {
-                if (step != null)
+                if (truck != null)
                 {
-                    step.enabled = true;
+                    truck.SetActive(true);
                 }
             }
         }
-    }
-    
-    private IEnumerator Switch()
-    {
-        yield return new WaitForSeconds(1);
-        GameManager.Instance.SwitchScene(SceneManager.GetActiveScene().name, "LevelSelect");
+
+        if (currentStep == 5)
+        {
+            tutorialAI[0].GetComponent<RacingNavMove>().boostCapable = true;
+        }
     }
 
     void NextTutorialStep()
@@ -84,11 +77,7 @@ public class TutorialManager : MonoBehaviour
 
     public void OnPlayerEnter(int tutorialStep)
     {
-        if (tutorialStep == 5)
-        {
-            StartCoroutine(Switch());
-        }
-        else if (tutorialStep == currentStep)
+        if (tutorialStep == currentStep)
         {
             currentStep++;
             Pause();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,13 @@ public class RacingData : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip checkpointSound;
 
+    public RaceManager manager;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<RaceManager>();
+    }
+
     // Update is called once per frame
     public void UpdateRaceProgress(float distance)
     {
@@ -39,7 +47,7 @@ public class RacingData : MonoBehaviour
                 if (CompareTag("Player"))
                 {
                    other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                   RaceManager.checkpoints[0].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                   manager.checkpoints[0].gameObject.GetComponent<MeshRenderer>().enabled = true;
                    if (audioSource != null && checkpointSound != null)
                    {
                        audioSource.PlayOneShot(checkpointSound);
@@ -52,7 +60,15 @@ public class RacingData : MonoBehaviour
                 if (CompareTag("Player"))
                 {
                     other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                    RaceManager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                    manager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                    if (other.GetComponent<Checkpoint>().altCheckpoint != null)
+                    {
+                        other.GetComponent<Checkpoint>().altCheckpoint.GetComponent<MeshRenderer>().enabled = false;
+                        if (manager.checkpoints[newInd + 1].gameObject.GetComponent<Checkpoint>().altCheckpoint != null)
+                        {
+                            manager.checkpoints[newInd + 1].gameObject.GetComponent<Checkpoint>().altCheckpoint.GetComponent<MeshRenderer>().enabled = true;
+                        }
+                    }
                     if (audioSource != null && checkpointSound != null)
                     {
                         audioSource.PlayOneShot(checkpointSound);
@@ -64,7 +80,7 @@ public class RacingData : MonoBehaviour
                 if (CompareTag("Player"))
                 {
                     other.gameObject.GetComponent<MeshRenderer>().enabled = false;
-                    RaceManager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
+                    manager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true; 
                     if (audioSource != null && checkpointSound != null)
                     {
                         audioSource.PlayOneShot(checkpointSound);
@@ -72,6 +88,31 @@ public class RacingData : MonoBehaviour
                 }
             }
             //print(currentCheckpoint);
+        } 
+        else if (other.CompareTag("AltCheckpoint"))
+        {
+            int newInd = other.gameObject.GetComponent<AltCheckpoint>().checkpointIndex;
+            if (currentCheckpoint == newInd - 1)
+            {
+                currentCheckpoint = newInd;
+                if (CompareTag("Player"))
+                {
+                    other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    
+                    manager.checkpoints[newInd + 1].gameObject.GetComponent<MeshRenderer>().enabled = true;
+                    
+                    manager.checkpoints[newInd].gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    
+                    if (manager.checkpoints[newInd + 1].gameObject.GetComponent<Checkpoint>().altCheckpoint != null)
+                    {
+                        manager.checkpoints[newInd + 1].gameObject.GetComponent<Checkpoint>().altCheckpoint.GetComponent<MeshRenderer>().enabled = true;
+                    }
+                    if (audioSource != null && checkpointSound != null)
+                    {
+                        audioSource.PlayOneShot(checkpointSound);
+                    }
+                }
+            } 
         }
     }
 }

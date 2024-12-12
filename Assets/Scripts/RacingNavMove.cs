@@ -6,7 +6,11 @@ public class RacingNavMove : MonoBehaviour
 {
     public Transform[]  innerPoints;
     public Transform[] outerPoints;
-    private int destPoint = 0;
+    public Transform[]  altInnerPoints;
+    public Transform[] altOuterPoints;
+    public int destPoint = 0;
+    public bool usingAlt;
+    
     public UnityEngine.AI.NavMeshAgent agent;
     private Animator anim;
     
@@ -75,9 +79,30 @@ public class RacingNavMove : MonoBehaviour
         // Returns if no  innerPoints have been set up
         if ( innerPoints.Length == 0)
             return;
-
+        
+        int rand = Random.Range(1, 3);
         // Set the agent to go to the currently selected destination.
-        agent.destination = (Random.Range(1, 3) == 1 ?  innerPoints[destPoint].position : outerPoints[destPoint].position);
+        if (innerPoints[destPoint].GetComponent<Diverge>().diverges && !usingAlt && rand == 1) //new diverge
+        {
+            usingAlt = true;
+            print(name + " is now on alt route");
+        } else if (innerPoints[destPoint].GetComponent<Diverge>().diverges && usingAlt) //end of diverge
+        {
+            usingAlt = false;
+            print(name + " is no longer on alt route");
+        }
+
+        if (usingAlt)
+        {
+            
+            agent.destination = (rand == 1 ?  altInnerPoints[destPoint].position : altOuterPoints[destPoint].position);
+            print(name+" rolled a "+rand);
+        }
+        else
+        {
+            agent.destination = (rand == 1 ?  innerPoints[destPoint].position : outerPoints[destPoint].position);
+        }
+        
         //agent.destination =  innerPoints[destPoint].position;
 
         // Choose the next point in the array as the destination,

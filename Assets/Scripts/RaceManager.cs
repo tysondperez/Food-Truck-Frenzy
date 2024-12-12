@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class RaceManager : MonoBehaviour
 {
     public GameObject[] racers;
-    public static Checkpoint[] checkpoints;
+    public Checkpoint[] checkpoints;
     public bool switching = false;
     private readonly float[] boosts = {
         0f, 5f, 10f, 15f
@@ -28,6 +28,11 @@ public class RaceManager : MonoBehaviour
         foreach (Checkpoint checkpoint in checkpoints)
         {
             checkpoint.checkpointIndex = checkpoint.transform.GetSiblingIndex();
+            if (checkpoint.altCheckpoint != null)
+            {
+                checkpoint.altCheckpoint.checkpointIndex = checkpoint.checkpointIndex;
+                checkpoint.altCheckpoint.referenceCheckpoint = checkpoint;
+            }
         }
         System.Array.Sort(checkpoints, (a, b) => a.checkpointIndex.CompareTo(b.checkpointIndex));
         
@@ -95,7 +100,7 @@ public class RaceManager : MonoBehaviour
                     {
                         racers[i].GetComponent<RacingNavMove>().megaBoost = 0f;
                     }
-                    print("racer "+i+" is inside of 50m, disabling mega boost");
+                    //print("racer "+i+" is inside of 50m, disabling mega boost");
                 }
             }
             else
@@ -117,7 +122,7 @@ public class RaceManager : MonoBehaviour
         {
             racers[0].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             racers[0].GetComponent<TruckMovement>().enabled = false;
-            for (int i = 0; i < racers.Length; i++)
+            for (int i = 1; i < racers.Length; i++)
             {
                 racers[i].GetComponent<RacingNavMove>().enabled = false;
             }

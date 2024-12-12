@@ -595,7 +595,6 @@ GameObject:
   - component: {fileID: 2394313969377082340}
   - component: {fileID: 5977569550271103662}
   - component: {fileID: 1418112491935652486}
-  - component: {fileID: 2799280334071688258}
   m_Layer: 0
   m_Name: WaffleTruck
   m_TagString: Untagged
@@ -767,8 +766,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  altInnerPoints: []
+  altOuterPoints: []
+  destPoint: 0
+  usingAlt: 0
   agent: {fileID: 0}
   catchupBoost: 0
+  megaBoost: 0
   baseSpeed: 40
   boostCapable: 0
   tacticalBoost: 0
@@ -777,18 +781,6 @@ MonoBehaviour:
   boostCooldown: 10
   boostDuration: 5
   decisionDelay: 2
---- !u!114 &2799280334071688258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6144436952077645745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf1b8b2ccdc3084b9b6c43dbe1cb7e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6387281244253245269
 GameObject:
   m_ObjectHideFlags: 0
